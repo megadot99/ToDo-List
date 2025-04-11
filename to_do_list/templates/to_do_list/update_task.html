@@ -1,0 +1,9 @@
+{% extends 'to_do_list/base.html' %}
+{% block content %}
+  <h1>Update Task</h1>
+  <form action="{% url 'to_do_list:update_task' tasks.id %}"method='post'>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">save changes</button>
+  </form>
+{% endblock content %}

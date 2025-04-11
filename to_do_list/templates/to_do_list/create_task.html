@@ -1,0 +1,9 @@
+{% extends 'to_do_list/base.html' %}
+{% block content %}
+  <h1 class="mt-3">Create New Task</h1>
+  <form action="{% url 'to_do_list:create_task' %}"method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Create Task</button>
+  </form>
+{% endblock content %}
